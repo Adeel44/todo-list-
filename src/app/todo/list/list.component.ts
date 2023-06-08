@@ -19,8 +19,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getList()
-    //this.isCompleted()
-
+    
     
 
    
@@ -30,12 +29,6 @@ export class ListComponent implements OnInit {
     this.todService.gettodoList().subscribe((result:any)=>{
       this.todoList = result
       console.log(result)
-
-      // for(var i=0; i<result.lenght;i++){
-      //   console.log(result[0])
-
-      // }
-
 
     })
 
@@ -52,7 +45,7 @@ export class ListComponent implements OnInit {
 
 
   isCompleted(event:any, listid:any){
-    
+
     console.log(event.target.checked)
     this.todService.updateStatus(listid , {isdone:event?.target.checked}).subscribe((data)=>{
     
@@ -64,9 +57,6 @@ export class ListComponent implements OnInit {
 
   }
  
-   
-    
-  
 
 
 }
